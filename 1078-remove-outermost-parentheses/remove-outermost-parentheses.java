@@ -3,20 +3,19 @@ class Solution {
         int count = 0;
         int st = 0;
         StringBuilder ans = new StringBuilder();
-        for(int i = 0 ; i < s.length() ; i++){
-            if(s.charAt(i) == '('){
+        for(char ch : s.toCharArray()){
+            if(ch =='('){
                 if(count > 0){
-                    ans.append('(');
+                    ans.append(ch);
                 }
                 count++;
-            }else{
+            }
+            else{
                 count--;
-                if(count > 0 ){
-                    ans.append(')');
+                if(count > 0){
+                    ans.append(ch);
                 }
             }
-
-            
         }
         return ans.toString();
     }
