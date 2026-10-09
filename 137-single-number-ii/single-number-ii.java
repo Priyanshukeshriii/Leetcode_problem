@@ -1,11 +1,17 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        Arrays.sort(nums);
-        for(int i = 1 ; i < nums.length ; i+=3){
-            if(nums[i] != nums[i-1]){
-                return nums[i-1];
+        int ans = 0;
+        for(int bit_idx = 0 ; bit_idx < 32 ; bit_idx++){
+            int count = 0;
+            for(int i = 0 ; i < nums.length; i++){
+                if((nums[i] & (1 << bit_idx)) != 0){
+                    count++;
+                }
+            }
+            if((count % 3 )== 1 ){
+                ans = ans | (1<<bit_idx);
             }
         }
-        return nums[nums.length-1];
+        return ans;
     }
 }
