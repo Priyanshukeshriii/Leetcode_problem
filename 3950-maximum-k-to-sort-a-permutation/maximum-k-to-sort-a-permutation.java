@@ -1,17 +1,11 @@
 class Solution {
     public int sortPermutation(int[] nums) {
-        if(nums[0]!=0) return 0;
-        int ans=0;
-        boolean set = true;
-        for(int i =0;i<nums.length;i++){
-            if(!(nums[i]==i)){
-                if(ans==0 && set){
-                    ans =nums[i];
-                    set = false;
-                }    
-                ans=ans&nums[i];
-            }
+        int n=nums.length;
+        int k=(1<<17)-1;
+        for(int i=0;i<n;i++){
+            if(nums[i]==i) continue;
+            k&=nums[i];
         }
-        return ans;
+        return k==((1<<17)-1)?0:k;
     }
 }
