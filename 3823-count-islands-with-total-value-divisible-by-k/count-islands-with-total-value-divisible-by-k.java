@@ -23,7 +23,7 @@ class Solution {
                 sum = 0;
                 if(grid[i][j] != 0 ){
                     isIsland(i,j);
-                    if(sum % (long)k == 0 )  count++;
+                    if(sum % k == 0 )  count++;
                 }
             }
         }
