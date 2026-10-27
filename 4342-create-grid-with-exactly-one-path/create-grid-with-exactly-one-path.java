@@ -2,20 +2,19 @@ class Solution {
     public String[] createGrid(int m, int n) {
         String[] grid = new String[m];
 
-        StringBuilder first = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int j = 0; j < n; j++) {
-            first.append('.');
+            sb.append('.');
         }
-        grid[0] = first.toString();
-
-        StringBuilder second = new StringBuilder();
+        grid[0] = sb.toString();
+        sb = new StringBuilder();
         for (int j = 0; j < n - 1; j++) {
-            second.append('#');
+            sb.append('#');
         }
-        second.append('.');
+        sb.append('.');
 
         for (int i = 1; i < m; i++) {
-            grid[i] = second.toString();
+            grid[i] = sb.toString();
         }
 
         return grid;
