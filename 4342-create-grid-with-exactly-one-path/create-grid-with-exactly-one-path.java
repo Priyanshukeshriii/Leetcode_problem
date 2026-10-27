@@ -1,4 +1,8 @@
 class Solution {
+    static{
+        Solution s = new Solution();
+        for(int i = 0 ; i < 5 ; i++) s.createGrid(2,2);
+    }
     public String[] createGrid(int m, int n) {
         String[] grid = new String[m];
 
