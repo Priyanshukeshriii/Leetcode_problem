@@ -16,7 +16,7 @@ class Solution {
         ListNode even = head.next;
         ListNode tempO = head;
         ListNode tempE = head.next;
-        while(tempE.next != null && tempO.next != null&& tempO.next.next != null && tempE.next.next != null){
+        while(tempE.next != null && tempE.next.next != null){
             tempO.next = tempO.next.next;
             tempE.next = tempE.next.next;
             tempO = tempO.next;
